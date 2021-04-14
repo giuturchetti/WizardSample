@@ -8,29 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WizardTest.Entities.Tipos;
+using WizardTest.Entities;
 
 namespace WizardTest.View
 {
     public partial class ucWizard2 : UserControl
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string CPF { get; set; }
-        public string Telefone { get; set; }
+        public Funcionario Funcionario;        
 
         public ucWizard2()
         {
             InitializeComponent();
+            Funcionario = new Funcionario();
+            Funcionario.Contratos = new List<Contrato>();
             cmbDepartamento.DataSource = Enum.GetValues(typeof(Departamento));
+            cmbDepartamento.SelectedIndex = 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public Funcionario Salvar()
         {
+            if (!string.IsNullOrWhiteSpace(txtId.Text))
+                Funcionario.Id = int.Parse(txtId.Text);
+            Funcionario.Nome = txtNome.Text;
+            Funcionario.CPF = txtCPF.Text;
+            Funcionario.Telefone = txtTelefone.Text;
             if (cmbDepartamento.SelectedItem is Departamento)
             {
-                MessageBox.Show(cmbDepartamento.SelectedItem.ToString());
-                MessageBox.Show((cmbDepartamento.SelectedItem is Departamento).ToString());
+                Funcionario.Dep = (Departamento)cmbDepartamento.SelectedItem;
             }
+
+            return Funcionario;
         }
     }
 }

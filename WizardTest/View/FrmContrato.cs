@@ -15,6 +15,7 @@ namespace WizardTest.View
         public string Identificador { get; private set; }
         public double ValorHora { get; private set; }
         public int QtdeHora { get; private set; }
+        public bool Confirmou { get; private set; }
 
         public FrmContrato()
         {
@@ -23,6 +24,7 @@ namespace WizardTest.View
 
         private void btnConcluir_Click(object sender, EventArgs e)
         {
+            Confirmou = true;
             Identificador = txtIdentificador.Text;
             ValorHora = Double.Parse(txtValorHora.Text);
             QtdeHora = int.Parse(txtQtdeHoras.Text);

@@ -41,13 +41,13 @@
             this.lblSalarioBase = new System.Windows.Forms.Label();
             this.btnCriarContrato = new System.Windows.Forms.Button();
             this.dgvContratos = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.bsContratos = new System.Windows.Forms.BindingSource(this.components);
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.identificadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtdeHorasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorFinalContrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsContratos = new System.Windows.Forms.BindingSource(this.components);
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsContratos)).BeginInit();
             this.SuspendLayout();
@@ -141,20 +141,6 @@
             this.dgvContratos.Size = new System.Drawing.Size(590, 150);
             this.dgvContratos.TabIndex = 9;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 193);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 24);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Contratos:";
-            // 
-            // bsContratos
-            // 
-            this.bsContratos.DataSource = typeof(WizardTest.Entities.Contrato);
-            // 
             // dataDataGridViewTextBoxColumn
             // 
             this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
@@ -199,6 +185,21 @@
             this.ValorFinalContrato.DefaultCellStyle = dataGridViewCellStyle4;
             this.ValorFinalContrato.HeaderText = "Valor Contrato";
             this.ValorFinalContrato.Name = "ValorFinalContrato";
+            this.ValorFinalContrato.ReadOnly = true;
+            // 
+            // bsContratos
+            // 
+            this.bsContratos.DataSource = typeof(WizardTest.Entities.Contrato);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 193);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 24);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Contratos:";
             // 
             // ucWizard3
             // 
@@ -215,6 +216,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ucWizard3";
             this.Size = new System.Drawing.Size(630, 390);
+            this.VisibleChanged += new System.EventHandler(this.ucWizard3_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsContratos)).EndInit();
             this.ResumeLayout(false);

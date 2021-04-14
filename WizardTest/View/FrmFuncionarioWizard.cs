@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WizardTest.Entities;
 using WizardTest.Entities.Tipos;
 
 namespace WizardTest.View
 {
     public partial class FrmFuncionarioWizard : Form
     {
-        private TelaWizard _tela;
+        public Funcionario Funcionario;
 
+        public bool Concluiu = false;
+
+        private TelaWizard _tela;
 
         private TelaWizard TelaAtual
         {
@@ -34,9 +38,11 @@ namespace WizardTest.View
 
         public FrmFuncionarioWizard()
         {
-            InitializeComponent();
-            uc1.ConcordoChanged += Uc1_ConcordoChanged;
+            InitializeComponent();            
             TelaAtual = TelaWizard.Um;
+            uc1.ConcordoChanged += Uc1_ConcordoChanged;
+            Funcionario = new Funcionario();
+            Funcionario.Contratos = new List<Contrato>();
         }
 
         private void Uc1_ConcordoChanged(bool concorda)
@@ -48,20 +54,9 @@ namespace WizardTest.View
         {
             if (TelaAtual == TelaWizard.Um)
             {
-                btnVoltar.Enabled = false;
-                btnAvancar.Enabled = false;
+                btnVoltar.Enabled = false;                
             }
-            else if (TelaAtual == TelaWizard.Dois)
-            {
-                btnVoltar.Enabled = true;
-                btnAvancar.Enabled = true;
-            }
-            else if (TelaAtual == TelaWizard.Tres)
-            {
-                btnVoltar.Enabled = true;
-                btnAvancar.Enabled = true;
-            }
-            else if (TelaAtual == TelaWizard.Quatro)
+            else
             {
                 btnVoltar.Enabled = true;
                 btnAvancar.Enabled = true;
@@ -78,13 +73,16 @@ namespace WizardTest.View
             }
             else if (TelaAtual == TelaWizard.Dois)
             {
-                //uc2.Salvar();
+                Funcionario = uc2.Salvar();
+                uc3.AtualizarFuncionario(Funcionario);
                 uc2.Visible = false;
                 uc3.Visible = true;
                 TelaAtual = TelaWizard.Tres;
             }
             else if (TelaAtual == TelaWizard.Tres)
             {
+                Funcionario = uc3.Salvar();
+                uc4.AtualizarFuncionario(Funcionario);
                 uc3.Visible = false;
                 uc4.Visible = true;
                 btnAvancar.Text = "Concluir";
@@ -92,6 +90,8 @@ namespace WizardTest.View
             }
             else if (TelaAtual == TelaWizard.Quatro)
             {
+                Funcionario = uc4.Salvar();
+                Concluiu = true;
                 Close();
             }
         }

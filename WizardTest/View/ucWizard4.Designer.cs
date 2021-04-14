@@ -142,6 +142,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ucWizard4";
             this.Size = new System.Drawing.Size(630, 390);
+            this.VisibleChanged += new System.EventHandler(this.ucWizard4_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

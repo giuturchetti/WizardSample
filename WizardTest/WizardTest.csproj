@@ -69,6 +69,12 @@
     <Compile Include="View\FrmFuncionarioWizard.Designer.cs">
       <DependentUpon>FrmFuncionarioWizard.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ucFuncionario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ucFuncionario.Designer.cs">
+      <DependentUpon>ucFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ucWizard1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmFuncionarioWizard.resx">
       <DependentUpon>FrmFuncionarioWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ucFuncionario.resx">
+      <DependentUpon>ucFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ucWizard1.resx">
       <DependentUpon>ucWizard1.cs</DependentUpon>

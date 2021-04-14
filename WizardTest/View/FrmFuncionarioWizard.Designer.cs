@@ -31,10 +31,10 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnAvancar = new System.Windows.Forms.Button();
             this.pnCorpo = new System.Windows.Forms.Panel();
-            this.uc4 = new WizardTest.View.ucWizard4();
-            this.uc3 = new WizardTest.View.ucWizard3();
-            this.uc2 = new WizardTest.View.ucWizard2();
             this.uc1 = new WizardTest.View.ucWizard1();
+            this.uc2 = new WizardTest.View.ucWizard2();
+            this.uc3 = new WizardTest.View.ucWizard3();
+            this.uc4 = new WizardTest.View.ucWizard4();
             this.pnCorpo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,13 +71,20 @@
             this.pnCorpo.Size = new System.Drawing.Size(630, 390);
             this.pnCorpo.TabIndex = 2;
             // 
-            // uc4
+            // uc1
             // 
-            this.uc4.Location = new System.Drawing.Point(0, 0);
-            this.uc4.Name = "uc4";
-            this.uc4.Size = new System.Drawing.Size(630, 390);
-            this.uc4.TabIndex = 0;
-            this.uc4.Visible = false;
+            this.uc1.Location = new System.Drawing.Point(0, 0);
+            this.uc1.Name = "uc1";
+            this.uc1.Size = new System.Drawing.Size(630, 390);
+            this.uc1.TabIndex = 3;
+            // 
+            // uc2
+            // 
+            this.uc2.Location = new System.Drawing.Point(0, 0);
+            this.uc2.Name = "uc2";
+            this.uc2.Size = new System.Drawing.Size(630, 390);
+            this.uc2.TabIndex = 2;
+            this.uc2.Visible = false;
             // 
             // uc3
             // 
@@ -87,24 +94,13 @@
             this.uc3.TabIndex = 1;
             this.uc3.Visible = false;
             // 
-            // uc2
+            // uc4
             // 
-            this.uc2.CPF = null;
-            this.uc2.Id = 0;
-            this.uc2.Location = new System.Drawing.Point(0, 0);
-            this.uc2.Name = "uc2";
-            this.uc2.Nome = null;
-            this.uc2.Size = new System.Drawing.Size(630, 390);
-            this.uc2.TabIndex = 2;
-            this.uc2.Telefone = null;
-            this.uc2.Visible = false;
-            // 
-            // uc1
-            // 
-            this.uc1.Location = new System.Drawing.Point(0, 0);
-            this.uc1.Name = "uc1";
-            this.uc1.Size = new System.Drawing.Size(630, 390);
-            this.uc1.TabIndex = 3;
+            this.uc4.Location = new System.Drawing.Point(0, 0);
+            this.uc4.Name = "uc4";
+            this.uc4.Size = new System.Drawing.Size(630, 390);
+            this.uc4.TabIndex = 0;
+            this.uc4.Visible = false;
             // 
             // FrmFuncionarioWizard
             // 
@@ -114,6 +110,8 @@
             this.Controls.Add(this.pnCorpo);
             this.Controls.Add(this.btnAvancar);
             this.Controls.Add(this.btnVoltar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FrmFuncionarioWizard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo Funcionário";

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WizardTest.Entities
 {
-    class Contrato
+    public class Contrato
     {
         public DateTime Data { get; set; }
         public string Identificador { get; set; }
@@ -27,6 +27,15 @@ namespace WizardTest.Entities
             Identificador = identificador;
             ValorHora = valorHora;
             QtdeHoras = qtdeHoras;
+        }
+
+        public override string ToString()
+        {
+            return $"Identificador: {Identificador}" +
+                $"Data: {Data}" +
+                $"Valor da hora: {ValorHora}" +
+                $"Quantidade de horas: {QtdeHoras}" +
+                $"Valor final do contrato: {ValorFinalContrato}";
         }
     }
 }
